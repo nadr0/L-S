@@ -15,10 +15,23 @@
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
 
+		// Parameters
+		// Angle, Initial, iterations, Rule
 
+		// Von Koch snowflake variation, x = 0, y = 250
 		// 60, F, F+F--F+F
-		var T = new turtle(250,250);
-		var L = new LSystem(60,"F--F--F",6,"F+F--F+F");
+		
+		// Von Koch snowflake, x = 0, y = 920
+		// 60, F--F--F, F+F--F+F
+
+		// Box, x = 0, y = 920
+		// 90, F+F+F+F, FF+F+F+F+FF
+		var x = 0;
+		var y = 250;
+		var iterations = 5;
+		var angle = 60;
+		var T = new turtle(x,y);
+		var L = new LSystem(angle,"F--F--F",iterations,"F+F--F+F");
 		L.decode();
 
 		function animate(){
