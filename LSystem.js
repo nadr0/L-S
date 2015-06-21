@@ -5,7 +5,7 @@ function LSystem(angle, production, iterations){
 	this.symbolWords = ["F","f","plus","minus"];
 	this.axiom = "F";
 	this.production = production;
-	this.rule = "F+F-F-F+F";
+	this.rule = "F+F--F+F";
 	this.iterations = iterations;
 	this.currentProduction = [];
 	this.nonConvert = [];
