@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<script type="text/javascript" src="turtle.js"></script>
@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<canvas id="myCanvas" width="512" height="512" style="background-color:FFFFF; border:1px solid black;"></canvas>
+	<canvas id="myCanvas" width="1920" height="1080" style="background-color:FFFFF; border:1px solid black;"></canvas>
 
 	<script>
 
@@ -17,8 +17,8 @@
 
 
 
-		var T = new turtle(100,100);
-		var L = new LSystem(60,"F+F--F+F+F+F--F+F--F+F--F+F+F+F--F+F");
+		var T = new turtle(100,800);
+		var L = new LSystem(90,"F",5);
 		L.decode();
 
 		function animate(){

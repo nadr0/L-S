@@ -1,26 +1,46 @@
-function LSystem(angle, production){
+function LSystem(angle, production, iterations){
 	this.angle = angle;
 	this.varible = "F";
 	this.symbols = ["F","f","+","-"];
 	this.symbolWords = ["F","f","plus","minus"];
 	this.axiom = "F";
 	this.production = production;
-	this.rules = "F";
-
+	this.rule = "F+F-F-F+F";
+	this.iterations = iterations;
+	this.currentProduction = [];
+	this.nonConvert = [];
 	T.angle = this.angle;
 }
 
 
 LSystem.prototype.decode = function(){
 
-	var currentProduction = [];
+ 	for (var j = 0; j < this.iterations; j++) {
+ 		this.currentProduction = [];
+ 		this.nonConvert = [];
+		for (var i = 0; i < this.production.length; i++) {
+			var func = this.checkFunc(this.production[i]);
+			if(this.production[i] === "F"){
+				for (var w = 0; w < this.rule.length; w++) {
+					var func = this.checkFunc(this.rule[w]);
+					this.nonConvert.push(this.rule[w]);
+					this.currentProduction.push(func);
+				};
+			}else{
+				this.currentProduction.push(func);
+				this.nonConvert.push(this.production[i]);
+			}
+		};
 
-	for (var i = 0; i < this.production.length; i++) {
-		var func = this.checkFunc(this.production[i]);
-		currentProduction.push(func);
-	};
+		this.production = "";
 
-	this.callFuncs(currentProduction);
+		for (var i = 0; i < this.nonConvert.length; i++) {
+			this.production = this.production + this.nonConvert[i];
+		};
+
+ 	};
+
+	this.callFuncs(this.currentProduction);
 
 }
 
