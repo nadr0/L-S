@@ -56,7 +56,7 @@ turtle.prototype.plus = function(){
 	var intoRad = (180 - this.angle) * this.rad;
 
 	var xNew = -(this.dir.x * Math.cos(intoRad) - this.dir.y * Math.sin(intoRad));
-	var yNew = -(this.dir.x * Math.sin(intoRad) - this.dir.y * Math.cos(intoRad));
+	var yNew = -(this.dir.x * Math.sin(intoRad) + this.dir.y * Math.cos(intoRad));
 
 	this.dir.x = xNew;
 	this.dir.y = yNew;
