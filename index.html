@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<canvas id="myCanvas" width="1920" height="1080" style="background-color:FFFFF; border:1px solid black;"></canvas>
+	<canvas id="myCanvas" width="1280" height="920" style="background-color:FFFFF; border:1px solid black;"></canvas>
 
 	<script>
 
@@ -16,9 +16,9 @@
 		var context = canvas.getContext('2d');
 
 
-
-		var T = new turtle(100,800);
-		var L = new LSystem(60,"F",5);
+		// 60, F, F+F--F+F
+		var T = new turtle(250,250);
+		var L = new LSystem(60,"F--F--F",6,"F+F--F+F");
 		L.decode();
 
 		function animate(){

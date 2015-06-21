@@ -1,11 +1,11 @@
-function LSystem(angle, production, iterations){
+function LSystem(angle, production, iterations, rule){
 	this.angle = angle;
 	this.varible = "F";
 	this.symbols = ["F","f","+","-"];
 	this.symbolWords = ["F","f","plus","minus"];
 	this.axiom = "F";
 	this.production = production;
-	this.rule = "F+F--F+F";
+	this.rule = rule;
 	this.iterations = iterations;
 	this.currentProduction = [];
 	this.nonConvert = [];
@@ -39,6 +39,15 @@ LSystem.prototype.decode = function(){
 		};
 
  	};
+
+ 	if(this.iterations === 0){
+	 	this.currentProduction = [];
+
+ 		for (var i = 0; i < this.production.length; i++) {
+			var func = this.checkFunc(this.production[i]);
+			this.currentProduction.push(func);
+		};
+ 	}
 
 	this.callFuncs(this.currentProduction);
 
