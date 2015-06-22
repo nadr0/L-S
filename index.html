@@ -26,12 +26,17 @@
 
 		// Box, x = 0, y = 920
 		// 90, F+F+F+F, FF+F+F+F+FF
-		var x = 0;
-		var y = 250;
-		var iterations = 5;
+
+
+		// Sierpinski's triangle, x = 50; y = 550; iterations = 8;
+		// 60,"F", "A-F-A","F+A+F"
+
+		var x = 50;
+		var y = 920;
+		var iterations = 12;
 		var angle = 60;
 		var T = new turtle(x,y);
-		var L = new LSystem(angle,"F--F--F",iterations,"F+F--F+F");
+		var L = new LSystem(angle,"F",iterations,"A-F-A","F+A+F");
 		L.decode();
 
 		function animate(){

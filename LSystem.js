@@ -1,11 +1,12 @@
-function LSystem(angle, production, iterations, rule){
+function LSystem(angle, production, iterations, rule1, rule2){
 	this.angle = angle;
 	this.varible = "F";
-	this.symbols = ["F","f","+","-"];
-	this.symbolWords = ["F","f","plus","minus"];
+	this.symbols = ["F","f","+","-","A"];
+	this.symbolWords = ["F","f","plus","minus","A"];
 	this.axiom = "F";
 	this.production = production;
-	this.rule = rule;
+	this.rule1 = rule1;
+	this.rule2 = rule2;
 	this.iterations = iterations;
 	this.currentProduction = [];
 	this.nonConvert = [];
@@ -21,9 +22,16 @@ LSystem.prototype.decode = function(){
 		for (var i = 0; i < this.production.length; i++) {
 			var func = this.checkFunc(this.production[i]);
 			if(this.production[i] === "F"){
-				for (var w = 0; w < this.rule.length; w++) {
-					var func = this.checkFunc(this.rule[w]);
-					this.nonConvert.push(this.rule[w]);
+				for (var w = 0; w < this.rule1.length; w++) {
+					var func = this.checkFunc(this.rule1[w]);
+					this.nonConvert.push(this.rule1[w]);
+					this.currentProduction.push(func);
+				};
+			}
+			else if(this.production[i] === "A"){
+				for (var q = 0; q < this.rule2.length; q++) {
+					var func = this.checkFunc(this.rule2[q]);
+					this.nonConvert.push(this.rule2[q]);
 					this.currentProduction.push(func);
 				};
 			}else{
@@ -67,6 +75,8 @@ LSystem.prototype.callFuncs = function(production){
 
 	for (var i = 0; i < production.length; i++) {
 		if(production[i] === "F"){
+			T.F();
+		}else if(production[i] === "A"){
 			T.F();
 		}else if(production[i] === "f"){
 			T.f();
