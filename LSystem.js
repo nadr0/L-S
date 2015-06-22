@@ -101,16 +101,3 @@ LSystem.prototype.callFuncs = function(production){
 	};
 
 }
-
-
-		// }else if(this.production[i] === "["){
-		// 		var posDir = {p: T.pos, d: T.dir};
-		// 		this.stack.push(posDir);
-		// 		this.nonConvert.push("[");
-		// 		this.currentProduction.push("plus");
-		// 	}else if(this.production[i] === "]"){
-		// 		var posDir = this.stack.pop();
-		// 		T.pos = posDir.p;
-		// 		T.dir = posDir.d;
-		// 		this.nonConvert.push("]");
-		// 		this.currentProduction.push("minus");
