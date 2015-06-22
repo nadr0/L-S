@@ -1,8 +1,8 @@
 function LSystem(angle, production, iterations, rule1, rule2){
 	this.angle = angle;
 	this.varible = "F";
-	this.symbols = ["F","f","+","-","A"];
-	this.symbolWords = ["F","f","plus","minus","A"];
+	this.symbols = ["F","f","+","-","A","[","]"];
+	this.symbolWords = ["F","f","plus","minus","A","[","]"];
 	this.axiom = "F";
 	this.production = production;
 	this.rule1 = rule1;
@@ -11,10 +11,12 @@ function LSystem(angle, production, iterations, rule1, rule2){
 	this.currentProduction = [];
 	this.nonConvert = [];
 	T.angle = this.angle;
+	this.stack = [];
 }
 
 
 LSystem.prototype.decode = function(){
+
 
  	for (var j = 0; j < this.iterations; j++) {
  		this.currentProduction = [];
@@ -27,8 +29,7 @@ LSystem.prototype.decode = function(){
 					this.nonConvert.push(this.rule1[w]);
 					this.currentProduction.push(func);
 				};
-			}
-			else if(this.production[i] === "A"){
+			}else if(this.production[i] === "A"){
 				for (var q = 0; q < this.rule2.length; q++) {
 					var func = this.checkFunc(this.rule2[q]);
 					this.nonConvert.push(this.rule2[q]);
@@ -84,7 +85,32 @@ LSystem.prototype.callFuncs = function(production){
 			T.plus();
 		}else if(production[i] === "minus"){
 			T.minus();
+		}else if(production[i] === "["){
+			var temp = {x: T.pos.x, y: T.pos.y, dx: T.dir.x, dy: T.dir.y};
+			this.stack.push(temp);
+			T.plus();
+		}else if(production[i] === "]"){
+			var temp = this.stack.pop();
+			T.pos.x = temp.x;
+			T.pos.y = temp.y;
+			T.dir.x = temp.dx;
+			T.dir.y = temp.dy;
+
+			T.minus();
 		}
 	};
 
 }
+
+
+		// }else if(this.production[i] === "["){
+		// 		var posDir = {p: T.pos, d: T.dir};
+		// 		this.stack.push(posDir);
+		// 		this.nonConvert.push("[");
+		// 		this.currentProduction.push("plus");
+		// 	}else if(this.production[i] === "]"){
+		// 		var posDir = this.stack.pop();
+		// 		T.pos = posDir.p;
+		// 		T.dir = posDir.d;
+		// 		this.nonConvert.push("]");
+		// 		this.currentProduction.push("minus");

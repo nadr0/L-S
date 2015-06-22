@@ -1,7 +1,7 @@
 function turtle(x,y){
 	this.pos = {x: x, y: y};
-	this.dir = {x: 1, y: 0};
-	this.unit = 0.5;
+	this.dir = {x: 0, y: -1};
+	this.unit = 7.0;
 	this.angle = 90;
 	this.rad = Math.PI/180;
 }
