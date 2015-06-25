@@ -5,11 +5,11 @@ function clearCanvas(){
 function newL(){
 	clearCanvas();
 	delete L;
-	pythagorasTree();
 }
 
 
 function kochSnow(){
+	newL();
 	T.pos.x = 0;
 	T.pos.y = 640;
 	T.dir.x = 1;
@@ -20,6 +20,7 @@ function kochSnow(){
 }
 
 function kochSnowFlake(){
+	newL();
 	T.pos.x = 75;
 	T.pos.y = 175;
 	T.dir.x = 1;
@@ -30,7 +31,7 @@ function kochSnowFlake(){
 }
 
 function box(){
-
+	newL();
 	T.pos.x = 560;
 	T.pos.y = 560;
 	T.dir.x = 0;
@@ -43,7 +44,7 @@ function box(){
 
 
 function sierpinskisTriangle(){
-
+	newL();
 	T.pos.x = 65;
 	T.pos.y = 550;
 	T.dir.x = 1;
@@ -55,7 +56,7 @@ function sierpinskisTriangle(){
 }
 
 function pythagorasTree(){
-
+	newL();
 	T.pos.x = 320;
 	T.pos.y = 640;
 	T.dir.x = 0;

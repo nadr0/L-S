@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 	<script type="text/javascript" src="turtle.js"></script>
 	<script type="text/javascript" src="LSystem.js"></script>
 	<script type="text/javascript" src="LoadSystems.js"></script>
@@ -8,7 +9,15 @@
 </head>
 <body>
 
-	<canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; border:1px solid black;"></canvas>
+	<canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; border:1px solid #7f8c8d;"></canvas>
+
+	<div id="buttons">
+		<button class="button"  onclick="kochSnow()">Snow</button>
+		<button class="button"  onclick="kochSnowFlake()">Koch snowflake</button>
+		<button class="button"  onclick="box()">Box</button>
+		<button class="button"  onclick="sierpinskisTriangle()">Sierpinski's triangle</button>
+		<button class="button"  onclick="pythagorasTree()">Pythagoras tree</button>
+	</div>
 
 	<script>
 
@@ -16,32 +25,16 @@
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
 
-		// Parameters
-		// Angle, Initial, iterations, Rule
-
-		// Von Koch snowflake variation, x = 0, y = 250
-		// 60, F, F+F--F+F
-		
-		// Von Koch snowflake, x = 0, y = 250
-		// 60, F--F--F, F+F--F+F
-
-		// Box, x = 0, y = 920
-		// 90, F+F+F+F, FF+F+F+F+FF
-
-
-		// Sierpinski's triangle, x = 50; y = 550; iterations = 8;
-		// 60,"F", "A-F-A","F+A+F"
-
-		// Pythagoras tree, x = 640; y= 920;
-		// iterations = 7; angle  45;
-		// "F", "A[F]F", "AA"
-
-		var x =640;
-		var y = 920;
-		var iterations = 7;
+		var x = 560;
+		var y = 560;
+		var iterations = 5;
 		var angle = 45;
 		var T = new turtle(x,y);
-		var L = new LSystem(angle,"F",iterations,"A[F]F","AA");
+		T.dir.x = 0;
+		T.dir.y = -1;
+		T.unit = 2.0;
+
+		var L = new LSystem(90, "F+F+F+F", 5,"FF+F+F+F+FF","");
 
 		L.decode();
 

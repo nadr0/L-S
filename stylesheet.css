@@ -1,0 +1,83 @@
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400);
+
+.button{
+	font-family: 'Alegreya Sans SC';
+	font-weight: 200;
+	font-size: 12px;
+	position: block;
+	width: 75px;
+	height: 50px;
+	float: left;
+	border: none; 
+	text-align: center;
+	text-decoration: none;
+	color: #ecf0f1;
+	font-weight: 200;
+	font-size: 13px;
+	cursor: pointer;
+	margin-top: 70px;
+	margin-left: 25px;
+	outline: 0;
+	opacity: 1;
+
+	background-color:#2c3e50;
+
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+
+	transition: background-color .25s ease-in-out;
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	border-radius: 6px;
+}
+
+#buttons{
+	top: 0px;
+	position: absolute;
+	display: inline-block;
+	width: 75px;
+	height: 400px;
+}
+
+.button:active{
+	transition: all 0.1s ease-in-out;
+ 	-ms-transform: scale(0.80,0.80); 
+	-webkit-transform: scale(0.80,0.80);
+	transform: scale(0.80,0.80);
+}
+.button:hover{
+	background-color: rgba(231, 76, 60, 0.8);
+}
+
+/*
+	BG:Turquoise - #1abc9c
+	B:Green Sea - #16a085
+	
+	Emerald - #2ecc71
+	Nephritis - #27ae60
+
+	Peter River - #3498db
+	Belize Hole - #2980b9
+
+	Amethyst - #9b59b6
+	Wisteria - #8e44ad
+
+	Wet Asphalt - #34495e
+	Midnight Blue - #2c3e50
+
+	Sun Flower - #f1c40f
+	Orange - #f39c12
+	
+	Carrot - #e67e22
+	Pumpkin - #d35400
+
+	Alizarin - #e74c3c
+	Pomegranate - #c0392b
+
+	Clouds - #ecf0f1
+	Silver - #bdc3c7
+
+	Concrete - #95a5a6
+	Asbestos - #7f8c8d
+*/
