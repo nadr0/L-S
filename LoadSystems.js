@@ -66,3 +66,14 @@ function pythagorasTree(){
 	L.decode();
 
 }
+
+function kochCurve(){
+	newL();
+	T.pos.x = 0;
+	T.pos.y = 640;
+	T.dir.x = 1;
+	T.dir.y = 0;
+	T.unit = 2;
+	L = new LSystem(90, "F", 6, "F+F-−F-−F+F","");
+	L.decode();
+}
