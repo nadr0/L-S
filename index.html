@@ -3,11 +3,12 @@
 <head>
 	<script type="text/javascript" src="turtle.js"></script>
 	<script type="text/javascript" src="LSystem.js"></script>
+	<script type="text/javascript" src="LoadSystems.js"></script>
 	<title></title>
 </head>
 <body>
 
-	<canvas id="myCanvas" width="1280" height="920" style="background-color:FFFFF; border:1px solid black;"></canvas>
+	<canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; border:1px solid black;"></canvas>
 
 	<script>
 
@@ -45,10 +46,6 @@
 		L.decode();
 
 		function animate(){
-            // context.clearRect(0, 0, canvas.width, canvas.height);
-
-            T.debug();
-
 			window.requestAnimationFrame(animate);
 		}
 
