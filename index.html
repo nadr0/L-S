@@ -3,43 +3,52 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 	<script type="text/javascript" src="turtle.js"></script>
-	<script type="text/javascript" src="LSystem.js"></script>
-	<script type="text/javascript" src="LoadSystems.js"></script>
+	<script type="text/javascript" src="reader.js"></script>
+	<script type="text/javascript" src="load.js"></script>
 	<title></title>
 </head>
 <body>
 
 	<canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF; border:1px solid #7f8c8d;"></canvas>
 
-	<div id="buttons">
-		<button class="button"  onclick="kochSnow()">Snow</button>
-		<button class="button"  onclick="kochSnowFlake()">Koch snowflake</button>
-		<button class="button"  onclick="box()">Box</button>
-		<button class="button"  onclick="sierpinskisTriangle()">Sierpinski's triangle</button>
-		<button class="button"  onclick="pythagorasTree()">Pythagoras tree</button>
-		<button class="button"  onclick="kochCurve()">Koch curve</button>
-	</div>
+    <select id="dropDownList" onchange="changeSystem(this)">
+      <option value="kochSnow">Koch snow curve</option>
+      <option value="kochSnowFlake">Koch snowflake</option>
+      <option value="box">box</option>
+      <option value="sierpinskisTriangle">sierpinski's triangle</option>
+      <option value="kochCurve">Koch curve</option>
+      <option value="quadraticKochisland">quadratic Koch island</option>
+      <option value="islandLakes">island & lake</option>
+      <option value="kochCurve1">koch curve 1</option>
+      <option value="kochCurve2">koch curve 2</option>
+      <option value="kochCurve3">koch curve 3</option>
+      <option value="kochCurve4">koch curve 4</option>
+      <option value="dragonCurve">dragon curve</option>
+      <option value="hexagonalGosperCurve">hexagonal gosper curve</option>
+      <option value="plant1">plant 1</option>
+      <option value="plant2">plant 2</option>
+      <option value="plant3">plant 3</option>
+    </select>
+
 
 	<script>
 
 
 		var canvas = document.getElementById("myCanvas");
 		var context = canvas.getContext('2d');
+		
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
 
-		var x = 560;
-		var y = 560;
-		var iterations = 5;
-		var angle = 45;
-		var T = new turtle(x,y);
-		T.dir.x = 0;
-		T.dir.y = -1;
-		T.unit = 2.0;
 
-		var L = new LSystem(90, "F+F+F+F", 5,"FF+F+F+F+FF","");
+		var turtle = new turtle();
+		var reader = new reader();
 
-		L.decode();
+		kochSnow();
+
 
 		function animate(){
+
 			window.requestAnimationFrame(animate);
 		}
 
