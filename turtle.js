@@ -41,8 +41,13 @@ turtle.prototype.f = function(){
 turtle.prototype.F = function(){
 	var endLocation = {x: this.unit * this.dir.x + this.pos.x, y: this.unit * this.dir.y + this.pos.y};
 
+
+	var R = Math.floor(Math.random() * 255 + 1);
+	var G = Math.floor(Math.random() * 255 + 1);
+	var B = Math.floor(Math.random() * 255 + 1);
+
 	context.beginPath();
-	context.strokeStyle = "black";
+	context.strokeStyle = "rgba("+R+","+G+","+B+",1.0)";
 	context.moveTo(this.pos.x, this.pos.y);
 	context.lineTo(endLocation.x, endLocation.y);
 	context.stroke();
