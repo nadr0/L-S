@@ -50,7 +50,7 @@ After the turtle is created the reader needs to know the rules of the l-system.
   * *.iterations*    - iterations
   * *.productions[]* - index with a variable, returns its rule. i.e. populate this array with rules
   * *.variables[]*   - index with a variable, allows that variable to draw a line like the command **F**
-  * *.ignoreSymbols*  - index with a variable, if you don't want them read in the drawing of the l-system
+  * *.ignoreSymbols[]*  - index with a variable, if you don't want them read in the drawing of the l-system
   
 ~~~javascript
 reader.axiom = "F--F--F";
