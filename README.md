@@ -8,9 +8,9 @@ I implemented turtle graphics to draw different L-systems such as the Koch curve
 For using the turtle, reader, and prewritten functions/l-systems include these files
 
 ~~~javascript
-	<script type="text/javascript" src="turtle.js"></script>
-	<script type="text/javascript" src="reader.js"></script>
-	<script type="text/javascript" src="load.js"></script>
+<script type="text/javascript" src="turtle.js"></script>
+<script type="text/javascript" src="reader.js"></script>
+<script type="text/javascript" src="load.js"></script>
 ~~~
 
 
