@@ -5,6 +5,15 @@ I implemented turtle graphics to draw different L-systems such as the Koch curve
 
 ### Using the turtle and creating L-systems
 
+For using the turtle, reader, and prewritten functions/l-systems include these files
+
+~~~javascript
+	<script type="text/javascript" src="turtle.js"></script>
+	<script type="text/javascript" src="reader.js"></script>
+	<script type="text/javascript" src="load.js"></script>
+~~~
+
+
 First we define a canvas then create the turtle and reader.
 
 ~~~javascript
