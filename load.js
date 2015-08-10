@@ -1,12 +1,22 @@
+/*
+	Clears the canvas
+*/
 function clearCanvas(){
 	context.clearRect(0, 0, canvas.width, canvas.height);
 };
 
+/*
+	Clears the canvas then resets the reader for a new l-system
+*/
 function newL(){
 	clearCanvas();
 	reader.reset();
 }
 
+
+/*
+	Changes the l-system based off the options in the drop down menu
+*/
 function changeSystem(list){
 	if(list.value === "kochSnow"){
 		kochSnow();
@@ -43,9 +53,12 @@ function changeSystem(list){
 	}
 }
 
+/*
+	Below are several functions for prewritten l-systems
+*/
+
 function kochSnow(){
 	newL();
-
 	turtle.pos.x = 0;
 	turtle.pos.y = 640;
 	turtle.dir.x = 1;
@@ -164,7 +177,7 @@ function islandLakes(){
 	turtle.dir.y = 0;
 	turtle.unit = 5.0;
 	turtle.angle = 90;
-
+	
 	reader.axiom = "F+F+F+F";
 	reader.angle = 90;
 	reader.iterations = 3;

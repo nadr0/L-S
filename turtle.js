@@ -14,9 +14,8 @@ turtle.prototype.debug = function(){
 turtle.prototype.drawDir = function(){
 
 	/* 
-		Draw Arrow
+		Draw directional arrow
 	*/
-
 	context.beginPath();
 	context.strokeStyle= "blue";
 	context.moveTo(this.pos.x, this.pos.y);
@@ -31,7 +30,6 @@ turtle.prototype.drawDir = function(){
 	context.closePath();
 
 }
-
 
 turtle.prototype.f = function(){
 	this.pos.x += this.unit * this.dir.x;

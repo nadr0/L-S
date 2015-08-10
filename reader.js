@@ -63,14 +63,8 @@ function reader(){
 				If FFGFF, it would only read the F
 	*/
 	this.ignoreSymbols = {
-		"A":true,
-		"B":true,	
-		"C":true,
-		"D":true,
-		"X":true,
-		"Y":true
-	};
 
+	};
 
 }
 

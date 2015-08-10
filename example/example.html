@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 	<script type="text/javascript" src="turtle.js"></script>
 	<script type="text/javascript" src="reader.js"></script>
 	<script type="text/javascript" src="load.js"></script>
@@ -23,8 +22,20 @@
 		var turtle = new turtle();
 		var reader = new reader();
 
-		dragonCurve();
+		turtle.pos.x = 90;
+		turtle.pos.y = 220;
+		turtle.dir.x = 1;
+		turtle.dir.y = 0;
+		turtle.unit  = 1.0;
+		turtle.angle = 60;
 
+		reader.axiom = "F--F--F";
+		reader.angle = 60;
+		reader.iterations = 6;
+		reader.productions["F"] = "F+F--F+F";
+		reader.variables["F"] = true;
+
+		reader.decode();
 
 	</script>
 
