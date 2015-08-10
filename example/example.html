@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+	<script type="text/javascript" src="turtle.js"></script>
+	<script type="text/javascript" src="reader.js"></script>
+	<script type="text/javascript" src="load.js"></script>
+	<title></title>
+</head>
+<body>
+
+	<canvas id="myCanvas" width="640" height="640" style="background-color:FFFFF;"></canvas>	
+
+	<script>
+
+
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext('2d');
+		
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		var turtle = new turtle();
+		var reader = new reader();
+
+		dragonCurve();
+
+
+	</script>
+
+
+</body>
+</html>
