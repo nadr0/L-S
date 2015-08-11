@@ -24,7 +24,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var turtle = new turtle();
-var reader = reader();
+var reader = new reader();
 ~~~
 
 Now we can set the initial conditions for the turtle.
