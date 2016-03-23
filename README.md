@@ -17,7 +17,7 @@ For using the turtle, reader, and prewritten functions/l-systems include these f
 First we define a canvas then create the turtle and reader.
 
 ~~~javascript
-<canvas id="myCanvas" width="640" height="640""> </canvas>
+<canvas id="myCanvas" width="640" height="640"> </canvas>
 var canvas = document.getElementById("myCanvas");
 var context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
